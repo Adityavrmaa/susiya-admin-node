@@ -3,8 +3,8 @@ import 'dotenv/config'
 import './database/dbConnect.js'
 import cors from 'cors';
 import morgan from 'morgan';
-import cartRoute from './api/routes/cart/cart.js';
-import authRouter from './api/routes/auth/auth.js';
+import cartRoute from './api/routes/cart.js';
+import authRouter from './api/routes/auth.js';
 import bodyParser from "body-parser"
 
 
