@@ -16,11 +16,11 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended : false }))
 app.use(bodyParser.json())
 
-// app.use((req, res, next) => {
-//     const error = new Error('Not Found')
-//     error.status= 404
-//     next(error) // 404 errors 
-// })
+app.use((req, res, next) => {
+    const error = new Error('Not Found')
+    error.status= 400
+    next() // 404 errors 
+})
 
 app.use((error, req, res, next) => {
     res.status(error.status || 500)
@@ -29,6 +29,7 @@ app.use((error, req, res, next) => {
     } })
 })
 
+// global route
 app.use('/auth', authRouter)
 app.use('/cart', cartRoute)
 
