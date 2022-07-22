@@ -7,7 +7,6 @@ import cartRoute from './api/routes/cart.js';
 import authRouter from './api/routes/auth.js';
 import bodyParser from "body-parser"
 
-
 const app = express();
 
 app.use(cors())
