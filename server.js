@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import cartRoute from './api/routes/cart.js';
 import authRouter from './api/routes/auth.js';
 import bodyParser from "body-parser"
+import checkoutRoute from './api/routes/checkout.js';
 
 const app = express();
 
@@ -31,7 +32,9 @@ app.use((error, req, res, next) => {
 // global route
 app.use('/auth', authRouter)
 app.use('/cart', cartRoute)
+app.use('/checkout', checkoutRoute)
 
+// geting port from process.env
 const PORT = process.env.PORT || 4000
 
 app.get('/', (req, res) => {
